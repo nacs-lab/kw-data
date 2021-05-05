@@ -154,7 +154,7 @@ function fit_and_plot_op(rates, data, τlifetime; color_idx = 1, n_sites = 1, p0
        xscale("log")
        grid()
        ylim(0, ylim()[2])
-       xlim(1e-2, xlim()[2])
+       xlim(0.5, xlim()[2])
        xlabel("\$t (ms)\$")
     end
     if p0 === nothing
@@ -438,6 +438,7 @@ errorbar(collect(1:n_sites), t_lof_f3_diag, t_lof_f3_diag_err, fmt="C0.")
 title("Cs F3 diagonal")
 xlabel("Site #")
 ylabel("\$ \\tau_{F3} (ms)\$")
+ylim([0, ylim()[2]])
 grid()
 
 subplot(3, 2, 2)
@@ -448,6 +449,7 @@ errorbar(collect(1:n_sites), t_hif_f4_diag, t_hif_f4_diag_err, fmt="C0.")
 title("Cs F4 diagonal")
 xlabel("Site #")
 ylabel("\$ \\tau_{F4} (ms)\$")
+ylim([0, ylim()[2]])
 grid()
 
 subplot(3, 2, 3)
@@ -458,6 +460,7 @@ errorbar(collect(1:n_sites), t_lof_f4_up, t_lof_f4_up_err, fmt="C0.")
 title("Cs F4 up")
 xlabel("Site #")
 ylabel("\$ \\tau_{F4} (ms)\$")
+ylim([0, ylim()[2]])
 grid()
 
 subplot(3, 2, 4)
@@ -468,6 +471,7 @@ errorbar(collect(1:n_sites), t_lof_f3_counterop, t_lof_f3_counterop_err, fmt="C0
 title("Cs F3 counterop")
 xlabel("Site #")
 ylabel("\$ \\tau_{F3} (ms)\$")
+ylim([0, ylim()[2]])
 grid()
 
 subplot(3, 2, 5)
@@ -478,6 +482,7 @@ errorbar(collect(1:n_sites), t_hif_f4_down, t_hif_f4_down_err, fmt="C0.")
 title("Cs F4 down")
 xlabel("Site #")
 ylabel("\$ \\tau_{F4} (ms)\$")
+ylim([0, ylim()[2]])
 grid()
 
 tight_layout(pad=0.6)
